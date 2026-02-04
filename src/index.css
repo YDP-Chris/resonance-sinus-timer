@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 font-medium;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-resonance-blue text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-600 transition-colors duration-200 focus:ring-4 focus:ring-blue-300 focus:outline-none;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-resonance-blue border-2 border-resonance-blue px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 focus:ring-4 focus:ring-blue-300 focus:outline-none;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .timer-display {
+    @apply text-6xl md:text-8xl font-bold text-gray-800 tracking-wider font-mono;
+  }
+
+  .protocol-card {
+    @apply bg-white rounded-xl shadow-md p-6 border-2 border-gray-200 hover:border-resonance-blue hover:shadow-lg transition-all duration-200 cursor-pointer;
+    min-height: 44px;
+  }
+
+  .protocol-card.selected {
+    @apply border-resonance-blue shadow-lg ring-4 ring-blue-100;
+  }
+
+  .breathing-cue {
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-resonance-teal text-white px-6 py-4 rounded-lg shadow-xl z-50 font-semibold text-center;
+    animation: fadeInOut 3s ease-in-out;
+  }
+
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+  }
+}
